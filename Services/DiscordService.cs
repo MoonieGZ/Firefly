@@ -106,7 +106,7 @@ public class DiscordService(
 
     private static Task OnMessageReceived(SocketMessage arg)
     {
-        if (arg.Author is not SocketGuildUser socketUser || socketUser.IsBot)
+        if (arg.Author is not SocketGuildUser socketUser)
             return Task.CompletedTask;
 
         if(socketUser.Id == 307998818547531777 && string.IsNullOrEmpty(arg.Content))
